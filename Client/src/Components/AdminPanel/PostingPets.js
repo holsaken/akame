@@ -7,7 +7,7 @@ const PostingPets = () => {
 
   const fetchRequests = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/requests`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/requests`);
       if (!response.ok) {
         throw new Error('An error occurred')
       }

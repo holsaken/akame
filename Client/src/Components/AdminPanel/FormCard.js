@@ -17,7 +17,7 @@ const FormCard = (props) => {
   const handleApprove = async () => {
     setIsApproving(true);
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/approving/${props.form.petId}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/approving/${props.form.petId}`, {
         method: 'PUT',
         body: JSON.stringify({
           email: props.form.email,
@@ -43,7 +43,7 @@ const FormCard = (props) => {
   
   const deleteFormAdoptedPet = async () => {
     try {
-      const deleteResponse = await fetch(`${import.meta.env.VITE_API_URL}/form/delete/many/${props.form.petId}`, {
+      const deleteResponse = await fetch(`${process.env.REACT_APP_API_URL}/form/delete/many/${props.form.petId}`, {
         method: 'DELETE'
       });
       if (!deleteResponse.ok) {
@@ -59,7 +59,7 @@ const FormCard = (props) => {
   const handleReject = async () => {
     setIsDeleting(true)
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/form/reject/${props.form._id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/form/reject/${props.form._id}`, {
         method: 'DELETE'
       })
 

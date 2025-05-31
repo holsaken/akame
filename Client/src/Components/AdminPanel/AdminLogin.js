@@ -11,7 +11,7 @@ const AdminLogin = () => {
   useEffect(() => {
     const fetchUsersData = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/admin/credentials`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/admin/credentials`);
         if (!response.ok) {
           throw new Error('Failed to fetch');
         }
