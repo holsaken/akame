@@ -9,7 +9,7 @@ const Pets = () => {
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        fetch(`${import.meta.env.VITE_API_URL}/approvedPets`)
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/approvedPets`);
         if (!response.ok) {
           throw new Error('An error occurred')
         }
